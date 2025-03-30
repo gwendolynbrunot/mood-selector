@@ -3,15 +3,22 @@ import MoodSelector from './MoodSelector';
 import MoodDisplay from './MoodDisplay';
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+const App: React.FC = () => {
+  const [selectedMood, setSelectedMood] = useState<string | null>(null);
+
+  const handleMoodSelect = (mood: string) => {
+    setSelectedMood(mood);
+  };
 
   return (
-    <>
-      <MoodSelector />
-      <MoodDisplay />
-    </>
-  )
-}
+    <div>
+      <MoodSelector
+        moods={['Happy', 'Sad', 'Excited', 'Tired']}
+        onSelectMood={handleMoodSelect}
+      />
+      <MoodDisplay selectedMood={selectedMood} />
+    </div>
+  );
+};
 
-export default App
+export default App;
