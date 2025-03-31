@@ -35,7 +35,7 @@
 .mood-button.selected, .reset-button.selected {
     color: rgb(66, 66, 66);
     background: rgb(227, 227, 227);
-    box-shadow:  7px 7px 14px #b7b7c1, -7px -7px 14px #ffffff;
+    box-shadow:  20px 20px 60px #bcbcc6, -20px -20px 60px #fefeff;
     mix-blend-mode: multiply;
     transition: none;
 }
