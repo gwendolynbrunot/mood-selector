@@ -8,9 +8,9 @@ const MoodDisplay: React.FC<MoodDisplayProps> = ({ selectedMood }) => {
   return (
     <div>
       {selectedMood ? (
-        <p>You're feeling <strong>{selectedMood}</strong> today!</p>
+        <p style={{ fontSize: '2em' }}>You're feeling <strong>{selectedMood}</strong> today!</p>
       ) : (
-        <p>No mood selected yet.</p>
+        <p style={{ color: '#e4e4f0', fontSize: '2em' }}>No mood selected yet.</p>
       )}
     </div>
   );

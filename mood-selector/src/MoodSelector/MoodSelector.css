@@ -1,0 +1,67 @@
+.heading {
+    color: #e4e4f0;
+}
+
+.heading.selected {
+    color: rgb(33, 33, 33);
+}
+
+.mood-buttons-wrapper {
+    max-width: 50vw;
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+.mood-button, .reset-button {
+    color: #e4e4f0;
+    border-radius: 18px;
+    border: transparent;
+    padding: 1em;
+    font-size: 1.2em;
+    background: #22222a;
+    box-shadow:  7px 7px 14px #121217, -7px -7px 14px #32323d;
+
+    transform: scale(1);
+    transition: transform 0.25s ease;
+    display: inline-block;
+}
+
+.reset-button {
+    margin: auto;
+    margin-top: 40px;
+}
+
+.mood-button.selected, .reset-button.selected {
+    color: rgb(66, 66, 66);
+    background: rgb(227, 227, 227);
+    box-shadow:  7px 7px 14px #b7b7c1, -7px -7px 14px #ffffff;
+    mix-blend-mode: multiply;
+    transition: none;
+}
+
+.mood-button::before, .reset-button::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    border-radius: inherit;
+    z-index: -1;
+    transition: transform 0.25s ease;
+    box-shadow: inherit;
+}
+
+.mood-button:hover, .reset-button:hover {
+    cursor: pointer;
+}
+
+.mood-button:hover::before, .reset-button:hover::before {
+    transform: scale(1.15);
+}
+
+.mood-text {
+    display: inline-block;
+    transform: scale(1) !important;
+}
