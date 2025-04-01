@@ -4,13 +4,7 @@ import MoodDisplay from './MoodDisplay/MoodDisplay';
 import './App.css'
 import './MoodSelector/MoodSelector.css'
 
-const backgroundMap: { [key: string]: string } = {
-  Happy: '#FFCC26',
-  Sad: '#5563FF',
-  Excited: '#FF008C',
-  Tired: '#BC27BA',
-  Annoyed: '#7AE48D'
-};
+import resetIcon from './assets/reset-icon.svg';
 
 const App: React.FC = () => {
   const [selectedMood, setSelectedMood] = useState<string | null>(null);
@@ -23,12 +17,12 @@ const App: React.FC = () => {
     setSelectedMood(null);
   };
 
-  const currentBackground = selectedMood ? backgroundMap[selectedMood] : '#22222A';
+  const moodClass = selectedMood ? selectedMood.toLowerCase() : 'default';
 
   return (
-    <div style={{ backgroundColor: currentBackground, minHeight: '100vh', minWidth: '100vw'}}>
+    <div className={`animated-background ${moodClass}`} style={{ height: '100vh', width: '100vw' }}>
       <MoodSelector
-        moods={['Happy', 'Sad', 'Excited', 'Tired', 'Annoyed']}
+        moods={['Happy', 'Sad', 'Excited', 'Tired']}
         onSelectMood={handleMoodSelect}
         selectedMood={selectedMood}
       />
@@ -38,7 +32,8 @@ const App: React.FC = () => {
           onClick={handleReset} 
           className={`reset-button ${selectedMood ? 'selected' : 'unselected'}`}
         >
-          Reset Mood
+          <img src={resetIcon} alt="reset icon" height="35px;" width="auto;"></img>
+          <span style={{marginLeft: '15px', top: '-7px', position: 'relative'}}>Reset Mood</span>
         </button>
       )}
 

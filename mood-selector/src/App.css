@@ -1,4 +1,44 @@
 #root {
   margin: 0 auto;
+  padding: 0;
   text-align: center;
+  height: 100%;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animated-background {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background: #22222A;
+  animation: gradientShift 10s ease infinite;
+}
+
+/* 🌞 Happy Mood */
+.happy {
+  background: linear-gradient(-45deg, #ffb983, #fff59d, #ffe364, #ffefbc);
+  background-size: 400% 400%;
+}
+
+/* 😢 Sad Mood */
+.sad {
+  background: linear-gradient(-45deg, #90caf9, #64b5f6, #42a5f5, #2196f3);
+  background-size: 400% 400%;
+}
+
+/* 🥳 Excited Mood */
+.excited {
+  background: linear-gradient(-45deg, #f48fb1, #f06292, #e91e63, #ec407a);
+  background-size: 400% 400%;
+}
+
+/* 😴 Tired Mood */
+.tired {
+  background: linear-gradient(-45deg, #b0bec5, #cfd8dc, #eceff1, #90a4ae);
+  background-size: 400% 400%;
 }
